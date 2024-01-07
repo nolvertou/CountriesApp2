@@ -8,6 +8,17 @@ import nou.net.countriesapp2.Country
 import nou.net.countriesapp2.R
 import nou.net.countriesapp2.databinding.ItemCountryBinding
 
+/**
+ * In order to display the list of elements which will be the countries we need to call an adapter.
+ * An adapter is basically a class that will take the data in the form that the ViewModel gives us.
+ * So a simply list of country elements and we'll transform that list into things that we can display,
+ * a list of layout items
+ *
+ * Inherits from RecyclerView.Adapter, this adapter needs to take what is called a Viewholder.
+ *
+ * We create a CountryViewHolder class which inherits from RecyclerView.ViewHolder
+ *
+ */
 class CountryListAdapter(var countries: ArrayList<Country>):
     RecyclerView.Adapter<CountryListAdapter.CountryViewHolder>() {
 
