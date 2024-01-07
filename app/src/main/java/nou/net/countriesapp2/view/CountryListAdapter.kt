@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import nou.net.countriesapp2.Country
 import nou.net.countriesapp2.R
+import nou.net.countriesapp2.databinding.ItemCountryBinding
 
 class CountryListAdapter(var countries: ArrayList<Country>):
     RecyclerView.Adapter<CountryListAdapter.CountryViewHolder>() {
@@ -75,11 +76,9 @@ class CountryListAdapter(var countries: ArrayList<Country>):
     override fun getItemCount() =  countries.size
 
     class CountryViewHolder(view: View): RecyclerView.ViewHolder(view){
+        private val binding = ItemCountryBinding.bind(view);
+        private val countryName = binding.name
 
-        // FIXME: name is not being recognized
-        private val countryName = view.name
-
-        // FIXME: text is not being recognized
         fun bind(country: Country){
             countryName.text = country.countryName
         }
