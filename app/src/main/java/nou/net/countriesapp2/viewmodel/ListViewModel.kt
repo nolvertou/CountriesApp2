@@ -17,21 +17,6 @@ class ListViewModel: ViewModel() {
     }
 
     private fun fetchCountries() {
-        val mockData = listOf(
-            Country("CountryA"),
-            Country("CountryB"),
-            Country("CountryC"),
-            Country("CountryD"),
-            Country("CountryE"),
-            Country("CountryF"),
-            Country("CountryG"),
-            Country("CountryH"),
-            Country("CountryI"),
-            Country("CountryJ")
-        )
 
-        countryLoadError.value = false
-        loading.value = false
-        countries.value = mockData
     }
 }
