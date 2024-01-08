@@ -2,4 +2,5 @@
 <resources>
     <dimen name="default_margin">8dp</dimen>
     <dimen name="layout_height">100dp</dimen>
+    <dimen name="standard_padding">8dp</dimen>
 </resources>
