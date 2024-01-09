@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import nou.net.countriesapp2.Country
 import nou.net.countriesapp2.R
 import nou.net.countriesapp2.databinding.ItemCountryBinding
+import nou.net.countriesapp2.util.getProgressDrawable
+import nou.net.countriesapp2.util.loadImage
 
 /**
  * In order to display the list of elements which will be the countries we need to call an adapter.
@@ -88,10 +90,15 @@ class CountryListAdapter(var countries: ArrayList<Country>):
 
     class CountryViewHolder(view: View): RecyclerView.ViewHolder(view){
         private val binding = ItemCountryBinding.bind(view);
+        private val imageView = binding.imageView
         private val countryName = binding.name
+        private val countryCapital = binding.capital
+        private val progressDrawable = getProgressDrawable(view.context) // ProgressDrawable is a spinner
 
         fun bind(country: Country){
             countryName.text = country.countryName
+            countryCapital.text = country.capital
+            imageView.loadImage(country.flag, progressDrawable)
         }
 
     }
