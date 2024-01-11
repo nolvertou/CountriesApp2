@@ -31,6 +31,12 @@ class MainActivity : AppCompatActivity() {
             adapter = countriesAdapter
         }
 
+        // Stop refreshing for ever, its just refreshed once and the spinner disappeared
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            binding.swipeRefreshLayout.isRefreshing = false
+            viewModel.refresh()
+        }
+
         observeViewModel()
     }
 
